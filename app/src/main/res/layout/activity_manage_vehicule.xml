@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="fr.eni.ecole.projetlocation.ManageVehicule">
+
+        <TextView
+            android:id="@+id/tv_marque"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/marque"
+            android:layout_marginTop="10dp"/>
+
+        <EditText
+            android:id="@+id/et_marque"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_marque" />
+
+        <TextView
+            android:id="@+id/tv_model"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_marque"
+            android:text="@string/model" />
+
+        <EditText
+            android:id="@+id/et_model"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_model" />
+
+        <TextView
+            android:id="@+id/tv_immatriculation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_model"
+            android:text="@string/plaque_d_immatriculation"/>
+
+        <EditText
+            android:id="@+id/et_immatriculation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_immatriculation"/>
+
+        <TextView
+            android:id="@+id/tv_carburant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_immatriculation"
+            android:text="@string/carburant" />
+
+        <RadioGroup
+            android:id="@+id/rg_carburant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_carburant"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+
+            <RadioButton
+                android:id="@+id/rb_essence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/essence" />
+
+            <RadioButton
+                android:id="@+id/rb_diesel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/diesel" />
+
+            <RadioButton
+                android:id="@+id/rb_gpl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gpl" />
+
+            <RadioButton
+                android:id="@+id/rb_electrique"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/electrique"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tv_type_vehicule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rg_carburant"
+            android:text="@string/type_de_vehicule" />
+
+        <RadioGroup
+            android:id="@+id/rg_type_vehicule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_type_vehicule"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+
+            <RadioButton
+                android:id="@+id/rb_ville"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ville" />
+
+            <RadioButton
+                android:id="@+id/rb_hors_ville"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/rb_diesel"
+                android:layout_alignTop="@+id/rg_type_vehicule"
+                android:text="@string/hors_ville" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tv_prix"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rg_type_vehicule"
+            android:text="@string/prix" />
+
+        <EditText
+            android:id="@+id/et_prix"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_prix"
+            android:ems="10"
+            android:inputType="number" />
+
+        <ImageButton
+            android:id="@+id/bt_ajout_photos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ajouter_des_photos"
+            android:onClick="onClickTakePhoto"
+            android:src="@android:drawable/ic_menu_camera"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/buttonradius"
+            style="@style/ButtonStyle"/>
+
+        <ImageView
+            android:id="@+id/img_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bt_ajout_photos"/>
+
+        <ImageView
+            android:id="@+id/img_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/img_1"/>
+
+        <ImageView
+            android:id="@+id/img_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/img_2"/>
+
+        <Button
+            android:id="@+id/bt_enregistrer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:text="@string/enregistrer"
+            android:onClick="onClickSaveVehicule"
+            android:layout_below="@id/img_1"
+            android:background="@drawable/buttonradius"
+
+            style="@style/ButtonStyle"/>
+
+    </RelativeLayout>
+</ScrollView>
